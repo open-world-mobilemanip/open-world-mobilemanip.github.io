@@ -2,6 +2,54 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.demo-video,
+.overview-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 10px;
+  background: #111;
+}
+
+.video-fallback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.section.online-adaptation {
+  padding-bottom: 6rem;
+}
+
+.online-adaptation .subtitle {
+  margin-bottom: 0;
+}
+
+.section.adaptation-videos {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section.adapted-policies {
+  padding-top: 6rem;
+}
+
+.adapted-policies .title {
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 767px) {
+  .video-grid > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .video-grid > .col + .col {
+    margin-top: 1rem;
+  }
+}
+
 
 .footer a {
     /*font-size: 25px;*/
@@ -15,6 +63,77 @@ body {
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.publication-media {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 0.75rem;
+}
+
+.media-logos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+.media-logos + .media-logos {
+  margin-top: 2.5rem;
+}
+
+.media-logos-secondary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.media-logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.media-logos img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.media-logos .media-logo-techxplore {
+  /* Crop the white space above and below the wordmark. */
+  aspect-ratio: 5 / 1;
+  object-fit: cover;
+}
+
+.media-logo-text {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .media-logos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .media-logos + .media-logos {
+    margin-top: 1.5rem;
+  }
+}
+
+#method_video,
+.publication-abstract {
+  /* Let the button row determine the shared width. */
+  contain: inline-size;
+  margin-top: 3rem;
+}
+
+.publication-abstract {
+  padding-bottom: 3rem;
 }
 
 .dnerf {
@@ -57,10 +176,12 @@ body {
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
+    padding-top: 5rem;
 }
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
+    margin-bottom: 1rem;
 }
 
 .publication-venue {
@@ -177,4 +298,3 @@ body {
   display: block;
   margin-top: 0.5em;
 }
-

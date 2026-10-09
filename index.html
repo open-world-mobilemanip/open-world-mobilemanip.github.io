@@ -20,18 +20,13 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="./static/js/index.js"></script>
 
   <link rel="icon" href="./favicon.ico?">
 
@@ -59,7 +54,7 @@
           
           
            
-          <div class="column has-text-centered">
+          <div class="publication-media has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
@@ -113,7 +108,30 @@
                   <span>Summary</span>
                 </a>
               </span>
-              
+              <!-- Media Link. -->
+              <span class="link-block">
+                <a href="https://www.nature.com/immersive/d41586-024-00608-5/index.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-newspaper"></i>
+                  </span>
+                  <span>Media</span>
+                </a>
+              </span>
+            </div>
+            <div id="method_video">
+              <iframe class="overview-video" width="960" height="540" src="https://www.youtube.com/embed/QITyEao86ro" title="Adaptive Mobile Manipulation overview" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p class="video-fallback"><a href="https://www.youtube.com/watch?v=QITyEao86ro" target="_blank" rel="noopener">Watch on YouTube</a></p>
+            </div>
+            <section class="publication-abstract">
+              <h2 class="title is-2">Abstract</h2>
+              <div class="content has-text-justified">
+                <p>
+                    Deploying robots in open-ended unstructured environments such as homes has been a long-standing research problem. However, robots are often studied only in closed-off lab settings, and prior mobile manipulation work is restricted to pick-move-place, which is arguably just the tip of the iceberg in this area. In this paper, we introduce Open-World Mobile Manipulation System, a full-stack approach to tackle realistic articulated object operation, e.g. real-world doors, cabinets, drawers, and refrigerators in open-ended unstructured environments. We propose an adaptive learning framework in which the robot initially learns from a small set of data through behavior cloning, followed by learning from online self-practice on novel variations that fall outside the BC training domain. We develop a low-cost mobile manipulation hardware platform capable of repeatedly safe and autonomous online adaptation in unstructured environments with a cost of around 20k USD. We conducted a field test on 20 novel doors across 4 different buildings on a university campus. In a trial period of less than one hour, our system demonstrated significant improvement, boosting the success rate from 50% of BC pre-training to 95% of online adaptation without any human intervention.
+                         </p>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -121,46 +139,12 @@
 </section>
 
 
-<section class="section" style="padding-bottom: 0">
-  <div class="container">
-    <div id="method_video" class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds no-bottom-padding">
-          <iframe height="500" src="https://www.youtube.com/embed/QITyEao86ro" title="YouTube video player" frameborder="0" style="border-radius:10px;  width: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </video>
-      </div>
 
-
-      
-    </div>
-
-
-    
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h2 class="title is-2">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-              Deploying robots in open-ended unstructured environments such as homes has been a long-standing research problem. However, robots are often studied only in closed-off lab settings, and prior mobile manipulation work is restricted to pick-move-place, which is arguably just the tip of the iceberg in this area. In this paper, we introduce Open-World Mobile Manipulation System, a full-stack approach to tackle realistic articulated object operation, e.g. real-world doors, cabinets, drawers, and refrigerators in open-ended unstructured environments. We propose an adaptive learning framework in which the robot initially learns from a small set of data through behavior cloning, followed by learning from online self-practice on novel variations that fall outside the BC training domain. We develop a low-cost mobile manipulation hardware platform capable of repeatedly safe and autonomous online adaptation in unstructured environments with a cost of around 20k USD. We conducted a field test on 20 novel doors across 4 different buildings on a university campus. In a trial period of less than one hour, our system demonstrated significant improvement, boosting the success rate from 50% of BC pre-training to 95% of online adaptation without any human intervention.
-                   </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!--/ Paper video. -->
-  <br/>
-  <br/>
-  
-</section>
-
-
-<section class="section">
+<section class="section online-adaptation">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-4" style="text-align: center;">Online Adaptation.</h2>
+        <h2 class="title is-4" style="text-align: center; padding-bottom: 1rem;">Online Adaptation.</h2>
      
 
         
@@ -168,7 +152,7 @@
             <tr>
           <td>
               <h2 class="subtitle">
-            We start by initializing our policy using a limited set of training data through behavior cloning. The central challenge we face is operating with new objects that fall outside the training domain. To address this, we've developed a system capable of fully autonomous Reinforcement Learning (RL) adaptation, utilizing a Vision-Language Model (VLM) for reward function In a trial period of less than one hour, this system demonstrated significant improvement, boosting the success rate from 50% to 95% without any human intervention.
+            We start by initializing our policy using a limited set of training data through behavior cloning. The central challenge we face is operating with new objects that fall outside the training domain. To address this, we've developed a system capable of fully autonomous Reinforcement Learning (RL) adaptation, utilizing a Vision-Language Model (VLM) for reward function. In a trial period of less than one hour, this system demonstrated significant improvement, boosting the success rate from 50% to 95% without any human intervention.
               </h2>
           </td>
         </tr>
@@ -179,34 +163,30 @@
 
 
 
-<section class="section">
+<section class="section adaptation-videos">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;"> </h2>
         <tr>
           <td>
-              <h2 class="subtitle">
-
-              </h2>
-          </td>
-        </tr>
-        <tr>
-          <td>
-             <div class="row">
+             <div class="row video-grid">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./lever-adapt.mp4" width="100%"
-                         style="border-radius:10px; "></video>
+                  <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./lever-adapt.mp4" poster="./static/images/video-posters/lever-adapt.jpg"
+                         width="854" height="480" aria-label="Lever handle online adaptation">
+                    <a href="./lever-adapt.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./lever-adapt.mp4">Open video</a></p>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./knob-adapt.mp4" width="100%"
-                       style="border-radius:10px; "></video>
+                <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./knob-adapt.mp4" poster="./static/images/video-posters/knob-adapt.jpg"
+                         width="854" height="480" aria-label="Knob handle online adaptation">
+                    <a href="./knob-adapt.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./knob-adapt.mp4">Open video</a></p>
               </div>
             </div>
-            <br>
-
-            
-            <br>
           </td>
         </tr>
       </div> 
@@ -216,63 +196,67 @@
 
 
   
-<section class="section">
+<section class="section adapted-policies">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-4" style="text-align: center;">All videos play at 1x speed. Test adapted policies.</h2>
-      </div> 
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;"> </h2>
         <tr>
           <td>
-              <h2 class="subtitle">
-
-              </h2>
-          </td>
-        </tr>
-        <tr>
-          <td>
-             <div class="row">
+             <div class="row video-grid">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./adapt-door-1.mp4" width="100%"
-                         style="border-radius:10px; "></video>
+                  <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./adapt-door-1.mp4" poster="./static/images/video-posters/adapt-door-1.jpg"
+                         width="854" height="480" aria-label="Adapted policy on door 1">
+                    <a href="./adapt-door-1.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./adapt-door-1.mp4">Open video</a></p>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./adapt-door-2.mp4" width="100%"
-                       style="border-radius:10px; "></video>
+                <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./adapt-door-2.mp4" poster="./static/images/video-posters/adapt-door-2.jpg"
+                         width="854" height="480" aria-label="Adapted policy on door 2">
+                    <a href="./adapt-door-2.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./adapt-door-2.mp4">Open video</a></p>
               </div>
             </div>
             <br>
-            <div class="row">
+            <div class="row video-grid">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./adapt-door-3.mp4" width="100%"
-                         style="border-radius:10px; "></video>
+                  <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./adapt-door-3.mp4" poster="./static/images/video-posters/adapt-door-3.jpg"
+                         width="854" height="480" aria-label="Adapted policy on door 3">
+                    <a href="./adapt-door-3.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./adapt-door-3.mp4">Open video</a></p>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./adapt-door-4.mp4" width="100%"
-                       style="border-radius:10px; "></video>
+                <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./adapt-door-4.mp4" poster="./static/images/video-posters/adapt-door-4.jpg"
+                         width="854" height="480" aria-label="Adapted policy on door 4">
+                    <a href="./adapt-door-4.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./adapt-door-4.mp4">Open video</a></p>
               </div>
             </div>
             <br>
-            <div class="row">
+            <div class="row video-grid">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./adapt-door-5.mp4" width="100%"
-                         style="border-radius:10px; "></video>
+                  <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./adapt-door-5.mp4" poster="./static/images/video-posters/adapt-door-5.jpg"
+                         width="854" height="480" aria-label="Adapted policy on door 5">
+                    <a href="./adapt-door-5.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./adapt-door-5.mp4">Open video</a></p>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./adapt-door-6.mp4" width="100%"
-                       style="border-radius:10px; "></video>
+                <video class="demo-video" muted loop playsinline controls preload="none"
+                         src="./adapt-door-6.mp4" poster="./static/images/video-posters/adapt-door-6.jpg"
+                         width="854" height="480" aria-label="Adapted policy on door 6">
+                    <a href="./adapt-door-6.mp4">Play video</a>
+                  </video>
+                  <p class="video-fallback video-error" hidden>Unable to play this video. <a href="./adapt-door-6.mp4">Open video</a></p>
               </div>
             </div>
 
@@ -292,54 +276,31 @@
   <div class="container">
     <h2 class="title is-2" style="text-align: center;" id="press-coverage">Media</h2>
     <br>
-    <div class="columns is-centered">
-      
-      
-      <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://www.nature.com/articles/d41586-024-00488-9">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" width="90%"></img>
-        </a>
-      </div>
-
-            <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://www.nature.com/immersive/d41586-024-00608-5/index.html">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" width="90%"></img>
-        </a>
-      </div>
-      
-      <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://techxplore.com/news/2024-02-robot-doors.html">
-          <img src="techxplore.png" width="90%"></img>
-        </a>
-      </div>
-      
-      <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://www.newscientist.com/article/2415590-this-robot-can-figure-out-how-to-open-almost-any-door-on-its-own/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/New_Scientist_logo.svg" width="90%"></img>
-        </a>
-      </div>
-
-
-
-        <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://www.iotworldtoday.com/robotics/self-learning-robot-teaches-itself-to-open-doors">
-          <img src="IoTWorldToday.png" width="90%"></img>
-        </a>
-      </div>
-          
-        <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://www.toolify.ai/ai-news/revolutionizing-mobile-robotics-cmus-breakthrough-in-openworld-manipulation-1248768">
-          <img src="toolify.png" width="90%"></img>
-        </a>
-      </div>
-
-            
-      </div>
-            <div class="column is-centered has-text-centered">
-        <a target="_blank" href="https://mp.weixin.qq.com/s/m4Fydw5W0wqFryvoNxkmvg">
-          <h2>新智元</h2>
-        </a>
-      </div>
+    <div class="media-logos">
+      <a target="_blank" href="https://www.nature.com/articles/d41586-024-00488-9">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" alt="Nature">
+      </a>
+      <a target="_blank" href="https://www.nature.com/immersive/d41586-024-00608-5/index.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Nature_journal_logo.svg" alt="Nature">
+      </a>
+      <a target="_blank" href="https://www.newscientist.com/article/2415590-this-robot-can-figure-out-how-to-open-almost-any-door-on-its-own/">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/New_Scientist_logo.svg" alt="New Scientist">
+      </a>
+    </div>
+    <div class="media-logos media-logos-secondary">
+      <a target="_blank" href="https://techxplore.com/news/2024-02-robot-doors.html">
+        <img class="media-logo-techxplore" src="techxplore.png" alt="TechXplore">
+      </a>
+      <a target="_blank" href="https://www.iotworldtoday.com/robotics/self-learning-robot-teaches-itself-to-open-doors">
+        <img src="IoTWorldToday.png" alt="IoT World Today">
+      </a>
+      <a target="_blank" href="https://www.toolify.ai/ai-news/revolutionizing-mobile-robotics-cmus-breakthrough-in-openworld-manipulation-1248768">
+        <img src="toolify.png" alt="Toolify.ai">
+      </a>
+      <a class="media-logo-text" target="_blank" href="https://mp.weixin.qq.com/s/m4Fydw5W0wqFryvoNxkmvg">
+        <span>新智元</span>
+      </a>
+    </div>
     
   </div>
 </section>
