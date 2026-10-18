@@ -19,7 +19,12 @@ body {
 }
 
 .section.online-adaptation {
+  margin-top: 50px;
   padding-bottom: 6rem;
+}
+
+.online-adaptation .title {
+  transform: translateY(10px);
 }
 
 .online-adaptation .subtitle {
